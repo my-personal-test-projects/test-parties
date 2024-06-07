@@ -1,0 +1,396 @@
+<div class="container mt-4">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+
+        @if (form.get('name')?.hasError('required') &&
+        form.get('name')?.touched) {
+        <small class="text-danger"> Name is required. </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Company Name</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="company_name"
+        />
+
+        @if (form.get('company_name')?.hasError('required') &&
+        form.get('company_name')?.touched) {
+        <small class="text-danger"> Company Name is required. </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Mobile No</label>
+        <input type="text" class="form-control" formControlName="mobile_no" />
+
+        @if (form.get('mobile_no')?.hasError('required') &&
+        form.get('mobile_no')?.touched) {
+        <small class="text-danger"> Mobile Number is required. </small>
+        } @if (form.get('mobile_no')?.hasError('pattern')
+        &&(!form.get('mobile_no')?.hasError('required')) &&
+        form.get('mobile_no')?.touched) {
+        <small class="text-danger">
+          Please, Enter 10 digit Mobile Number.
+        </small>
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Telephone No</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="telephone_no"
+        />
+
+        @if (form.get('telephone_no')?.hasError('required') &&
+        form.get('telephone_no')?.touched) {
+        <small class="text-danger"> Telephone No is required. </small>
+        } @if (form.get('telephone_no')?.hasError('pattern')
+        &&(!form.get('telephone_no')?.hasError('required')) &&
+        form.get('telephone_no')?.touched) {
+        <small class="text-danger">
+          Please, Enter 10 digit Telephone Number.
+        </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Whatsapp No</label>
+        <input type="text" class="form-control" formControlName="whatsapp_no" />
+
+        @if (form.get('whatsapp_no')?.hasError('required') &&
+        form.get('whatsapp_no')?.touched) {
+        <small class="text-danger"> Whatsapp No is required. </small>
+        } @if (form.get('whatsapp_no')?.hasError('pattern')
+        &&(!form.get('whatsapp_no')?.hasError('required')) &&
+        form.get('whatsapp_no')?.touched) {
+        <small class="text-danger">
+          Please, Enter 10 digit Whatsapp Number.
+        </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Email</label>
+        <input type="text" class="form-control" formControlName="email" />
+
+        @if (form.get('email')?.hasError('required') &&
+        form.get('email')?.touched) {
+        <small class="text-danger"> Email ID is required. </small>
+        } @if (form.get('email')?.hasError('email') &&
+        form.get('email')?.touched) {
+        <small class="text-danger"> Please enter a valid email address </small>
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Remark</label>
+        <input type="text" class="form-control" formControlName="remark" />
+
+        @if (form.get('remark')?.hasError('required') &&
+        form.get('remark')?.touched) {
+        <small class="text-danger"> Remark is required. </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Date of Birth</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="date_of_birth"
+          placeholder="yyyy-mm-dd"
+        />
+
+        @if (form.get('DOB')?.hasError('required') && form.get('DOB')?.touched)
+        {
+        <small class="text-danger"> DOB is required. </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Anniversary Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="anniversary_date"
+          placeholder="yyyy-mm-dd"
+        />
+
+        @if (form.get('anniversary_date')?.hasError('required') &&
+        form.get('anniversary_date')?.touched) {
+        <small class="text-danger"> Anniversary Date is required. </small>
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">GSTIN</label>
+        <input type="text" class="form-control" formControlName="gstin" />
+
+        <!-- @if (form.get('gstin')?.hasError('required') && form.get('gstin')?.touched) {
+        <small class="text-danger">
+          GSTIN is required.
+        </small>
+        } -->
+
+        @if (form.get('gstin')?.hasError('pattern') &&
+        form.get('gstin')?.touched) {
+        <small class="text-danger">
+          GSTIN number is invalid. Format: ABCDE12345W
+        </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">PAN No</label>
+        <input type="text" class="form-control" formControlName="pan_no" />
+
+        @if (form.get('pan_no')?.hasError('required') &&
+        form.get('pan_no')?.touched) {
+        <small class="text-danger"> PAN No is required. </small>
+        } @if (form.get('pan_no')?.hasError('pattern') &&
+        form.get('pan_no')?.touched) {
+        <small class="text-danger">
+          PAN number is invalid. Format: AAAAA9999A
+        </small>
+        }
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="mb-1">Credit Limit</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="credit_limit"
+        />
+
+        @if (form.get('credit_limit')?.hasError('required') &&
+        form.get('credit_limit')?.touched) {
+        <small class="text-danger"> Credit Limit is required. </small>
+        } @if (form.get('credit_limit')?.hasError('pattern')
+        &&(!form.get('credit_limit')?.hasError('required')) &&
+        form.get('credit_limit')?.touched) {
+        <small class="text-danger"> Please, Enter Number. </small>
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label>Login Access</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            [value]="true"
+            formControlName="login_access"
+          />
+          <label class="form-check-label" for="isRequiredYes">True</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            [value]="false"
+            formControlName="login_access"
+          />
+          <label class="form-check-label" for="isRequiredNo">False</label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Apply TDS</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            [value]="true"
+            formControlName="apply_tds"
+          />
+          <label class="form-check-label" for="isRequiredYes">True</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            [value]="false"
+            formControlName="apply_tds"
+          />
+          <label class="form-check-label" for="isRequiredNo">False</label>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <img src="{{ imageURl }}" height="80" width="80" />
+      </div>
+
+      @if(action =='Edit'){
+      <div class="col-md-4 mb-3">
+        <label>Update Image</label>
+        <input
+          id="image"
+          type="file"
+          (change)="onFileSelected($event)"
+          class="form-control"
+          formControlName="image"
+        />
+      </div>
+    }
+    </div>
+  
+
+    @if(!addressLabelFlag){
+    <h4>Address Details</h4>
+    }
+    <div formArrayName="address" class="mt-4">
+      @for (addressRow of addressControls; track addressRow;let i = $index) {
+      <div class="card mt-2" [formGroup]="addressRow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label>Address 1</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="address_line_1"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Address 2</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="address_line_2"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Country</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="country"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label>State</label>
+              <input type="text" class="form-control" formControlName="state" />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>City</label>
+              <input type="text" class="form-control" formControlName="city" />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Pincode</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="pincode"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    @if(action =='Edit'){
+    <div class="col-lg-12 d-flex justify-content-end mt-2">
+      <button
+        type="button"
+        class="btn btn-primary text-left"
+        (click)="addNewAddress()"
+      >
+        Add Address
+      </button>
+    </div>
+    } @if(!bankLabelFlag){
+    <h4 class="mt-3">Bank Details</h4>
+    }
+    <div formArrayName="bank" class="mt-2">
+      @for (bankRow of bankControls; track bankRow;let i = $index) {
+      <div class="card mt-2">
+        <div class="card-body" [formGroup]="bankRow">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label>IFSC Code</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="bank_ifsc_code"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Bank Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="bank_name"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Branch Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="branch_name"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label>Account No</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="account_no"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label>Account Holder Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="account_holder_name"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    @if(action =='Edit'){
+    <div class="col-lg-12 d-flex justify-content-end mt-2">
+      <button type="button" class="btn btn-primary" (click)="addNewBank()">
+        Add Bank
+      </button>
+    </div>
+    }
+
+    <div class="mt-3 pull-right">
+      <button
+        type="button"
+        class="btn btn-secondary mr-2"
+        (click)="backButton()"
+      >
+        Back
+      </button>
+
+      @if(action == 'Edit') {
+      <button type="button" class="btn btn-primary mr-2" (click)="update()">
+        Update
+      </button>
+      } @if(action == 'Delete') {
+      <button type="button" class="btn btn-danger" (click)="delete()">
+        Delete
+      </button>
+      }
+    </div>
+  </form>
+</div>

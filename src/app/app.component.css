@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1;
+  }
+  .sidebar {
+    background: #f8f9fa;
+    padding: 15px;
+    border-right: 1px solid #dee2e6;
+  }
+  .card {
+    margin-top: 20px;
+  }

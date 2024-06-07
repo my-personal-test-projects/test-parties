@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-body">
+  
+            <form [formGroup]="userForm">
+  
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label comman-label">Username</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" formControlName="userName" placeholder="Enter Username">
+
+                  @if (userForm.get('userName')?.hasError('required') && userForm.get('userName')?.touched) {
+                    <small class="text-danger">
+                      Username is required.
+                    </small>
+                  }
+                 
+                </div>
+              </div>
+  
+              <div class="form-group row mt-4">
+                <label class="col-sm-3 col-form-label comman-label">Password</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <input [type]="!passwordTextType ? 'text' : 'password'" class="form-control" formControlName="password"
+                      placeholder="Enter Password">
+                    <div class="input-group-append">
+                      <span class="btn btn-outline-secondary" (click)="togglePasswordVisibility()" data-toggle="tooltip" title="Toggle Password Visibility">
+                        <i class="fa" [ngClass]="{'fa-eye-slash': passwordTextType, 'fa-eye': !passwordTextType}"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  @if (userForm.get('password')?.hasError('required') && userForm.get('password')?.touched) {
+                    <small class="text-danger">
+                      Password is required.
+                    </small>
+                  }
+              
+                </div>
+              </div>
+  
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-5" (click)="login()">Login</button>
+              </div>
+  
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
